@@ -21,7 +21,9 @@ const io = socketIo(server, {
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
   }
+  
 });
+
 
 app.use(cors({
   origin: 'http://localhost:3000',
