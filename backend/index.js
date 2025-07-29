@@ -7,7 +7,7 @@ dotenv.config();
 const userRoutes = require('./routes/userRoutes');
 const notesRoutes = require('./routes/noteRoutes');
 const connectDB = require('./config/db');
-
+const postsRoutes = require('./routes/posts');
 connectDB();    
 
 const app = express();
@@ -38,6 +38,8 @@ app.use('/api/users', (req, res, next) => {
   next();
 }, userRoutes);
 app.use('/api/notes', notesRoutes);
+
+app.use('/events', postsRoutes);
 
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);

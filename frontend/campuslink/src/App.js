@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import {store} from './store'
 import AllNotes from './components/AllNotes';
 import Profile from './components/Profile';
+import Events from './components/Events';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Link to="/signup">Signup</Link>
                 <Link to="/upload">Upload</Link>
                 <Link to="/profile">Profile</Link>
+                <Link to="/events">Events</Link>
             </div>
         </div>
     <Routes>
@@ -31,6 +33,7 @@ function App() {
     <Route path="/upload"  element={<Upload />} />
     <Route path="/allnotes"  element={<AllNotes />} />
     <Route path="/profile"  element={<Profile />} />
+    <Route path="/events"  element={<Events />} />
     </Routes>
     </Router>
     </div>
