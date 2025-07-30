@@ -8,6 +8,8 @@ const userRoutes = require('./routes/userRoutes');
 const notesRoutes = require('./routes/noteRoutes');
 const connectDB = require('./config/db');
 const postsRoutes = require('./routes/posts');
+const discussion=require('./routes/postdiscussion');
+
 connectDB();    
 
 const app = express();
@@ -40,6 +42,8 @@ app.use('/api/users', (req, res, next) => {
 app.use('/api/notes', notesRoutes);
 
 app.use('/events', postsRoutes);
+
+app.use('/discussion',discussion );
 
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
