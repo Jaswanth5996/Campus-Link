@@ -11,6 +11,8 @@ import Profile from './components/Profile';
 import Events from './components/Events';
 import Discussion from './components/Discussion';
 import PostDiscussion from './components/postdiscussion';
+import Physio from './components/Physio';
+import DetailPage from './components/Detail';
 
 function Navbar() {
   const location = useLocation();
@@ -32,7 +34,7 @@ function Navbar() {
         <Link className={linkClass('/profile')} to="/profile">Profile</Link>
         <Link className={linkClass('/events')} to="/events">Events</Link>
         <Link className={linkClass('/discussion')} to="/discussion">Discussion</Link>
-        <Link className={linkClass('/postdiscussion')} to="/postdiscussion">Post</Link>
+        <Link className={linkClass('/physio')} to="/physio">Physio</Link>
       </div>
     </div>
   );
@@ -55,6 +57,8 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/discussion" element={<Discussion />} />
               <Route path="/postdiscussion" element={<PostDiscussion />} />
+              <Route path="/physio" element={<Physio />} />
+              <Route path="/detail/:id" element={<DetailPage />} />
             </Routes>
           </div>
         </Router>
