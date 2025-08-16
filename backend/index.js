@@ -14,12 +14,10 @@ connectDB();
 
 const app = express();
 
-
-
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000','https://campus-link-kappa.vercel.app'],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
   }
@@ -28,7 +26,7 @@ const io = socketIo(server, {
 
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['https://campus-link-kappa.vercel.app','http://localhost:3000'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
