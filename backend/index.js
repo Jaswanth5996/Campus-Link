@@ -19,7 +19,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000'],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
   }
@@ -56,6 +56,10 @@ io.on('connection', (socket) => {
     console.log('User disconnected:', socket.id);
   });
 });
+
+app.get('/',(req,res)=>{
+  res.send("server running ! use the api")
+})
 
 const PORT = process.env.PORT || 5000;
 
