@@ -9,6 +9,8 @@ const notesRoutes = require('./routes/noteRoutes');
 const connectDB = require('./config/db');
 const postsRoutes = require('./routes/posts');
 const discussion=require('./routes/postdiscussion');
+const Physio = require('./models/Physio');
+const PhyDetail = require('./models/PhyDetail');
 
 connectDB();    
 
@@ -53,6 +55,32 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.id);
   });
+});
+
+app.get('api/physio/', async (req, res) => {
+  try {
+    const physios = await Physio.find().sort({ createdAt: -1 });
+    res.json(physios);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.get('api/physio/:id', async (req, res) => {
+  try {
+    const physio = await Physio.findById(req.params.id);
+    if (!physio) return res.status(404).json({ message: 'Not found' });
+
+    const details = await PhyDetail.findOne({ postId: req.params.id });
+
+    res.json({
+      postId: physio, 
+      condition: details?.condition || '',
+      pt_manage: details?.pt_manage || ''
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
 app.get('/',(req,res)=>{
