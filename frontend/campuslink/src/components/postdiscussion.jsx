@@ -15,7 +15,7 @@ const PostDiscussion = () => {
     setSuccess("");
 
     try {
-      await axios.post("http://localhost:5000/discussion/postdiscussion/", {
+      await axios.post("https://campus-link-jd0k.onrender.com/discussion/postdiscussion/", {
         title,
         description,
         createdBy,

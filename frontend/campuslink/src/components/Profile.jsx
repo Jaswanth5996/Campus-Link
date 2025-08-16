@@ -16,7 +16,7 @@ const Profile = () => {
         console.log(token)
         if (!token) throw new Error('No token found, please login.');
 
-        const res = await fetch('http://localhost:5000/api/users/profile', {
+        const res = await fetch('https://campus-link-jd0k.onrender.com/api/users/profile', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -49,7 +49,7 @@ const Profile = () => {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No token found, please login.');
 
-        const res = await fetch(`http://localhost:5000/api/notes/my-notes/?uploadedBy=${user._id}`, {
+        const res = await fetch(`https://campus-link-jd0k.onrender.com/api/notes/my-notes/?uploadedBy=${user._id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },

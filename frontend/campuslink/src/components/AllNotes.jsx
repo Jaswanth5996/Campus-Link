@@ -16,7 +16,7 @@ const AllNotes = () => {
       if (subjectFilter) query.push(`subject=${encodeURIComponent(subjectFilter)}`);
       const queryString = query.length > 0 ? `?${query.join('&')}` : '';
 
-      const response = await axios.get(`http://localhost:5000/api/notes/all${queryString}`);
+      const response = await axios.get(`https://campus-link-jd0k.onrender.com/api/notes/all${queryString}`);
       setNotes(response.data);
     } catch (error) {
       console.error('Error fetching notes:', error);

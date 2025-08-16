@@ -11,7 +11,7 @@ const Home = () => {
   const fetchRecentNotes = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/notes/all?limit=10&sort=desc');
+      const response = await axios.get('https://campus-link-jd0k.onrender.com/api/notes/all?limit=10&sort=desc');
       setRecentNotes(response.data);
     } catch (error) {
       console.error('Error fetching recent notes:', error);

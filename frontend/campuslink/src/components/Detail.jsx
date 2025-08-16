@@ -11,7 +11,7 @@ const DetailPage = () => {
   useEffect(() => {
     const fetchDetail = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/physio/${id}`);
+        const res = await axios.get(`https://campus-link-jd0k.onrender.com/api/physio/${id}`);
         console.log(data)
         setData(res.data);
       } catch (err) {

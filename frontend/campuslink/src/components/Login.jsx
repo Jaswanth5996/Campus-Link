@@ -29,7 +29,7 @@ const Login = () => {
     setServerError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
+      const response = await axios.post('https://campus-link-jd0k.onrender.com/api/users/login', {
         email: data.email,
         password: data.password,
       });

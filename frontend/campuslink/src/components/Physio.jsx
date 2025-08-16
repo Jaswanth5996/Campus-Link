@@ -10,7 +10,7 @@ const Physio = () => {
 
     const fetchdata = async () => {
         try
-        {const response= await axios.get("http://localhost:5000/api/physio")
+        {const response= await axios.get("https://campus-link-jd0k.onrender.com/api/physio")
         setImpairments(response.data)
         }catch(err){
             console.log("error fetching data",err)

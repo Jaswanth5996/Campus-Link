@@ -23,7 +23,7 @@ const Events = () => {
       setError("You must be logged in to post an event");
       return;
     }
-      const response = await axios.post("http://localhost:5000/events/post", {
+      const response = await axios.post("https://campus-link-jd0k.onrender.com/events/post", {
         title,
         description,
         date,
@@ -52,7 +52,7 @@ const Events = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/events/");
+      const response = await axios.get("https://campus-link-jd0k.onrender.com/events/");
       setEvents(response.data);
     } catch (err) {
       console.error("Error fetching events:", err);

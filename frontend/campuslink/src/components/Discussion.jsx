@@ -9,7 +9,7 @@ const Discussion = () => {
 
   const fetchDiscussions = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/discussion/fetchalldiscussions/");
+      const response = await axios.get("https://campus-link-jd0k.onrender.com/discussion/fetchalldiscussions/");
       setDiscussion(response.data);
     } catch (err) {
       console.error("Error fetching discussions:", err);
