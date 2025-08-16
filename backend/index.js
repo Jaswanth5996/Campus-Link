@@ -57,7 +57,7 @@ io.on('connection', (socket) => {
   });
 });
 
-app.get('api/physio/', async (req, res) => {
+app.get('/api/physio/', async (req, res) => {
   try {
     const physios = await Physio.find().sort({ createdAt: -1 });
     res.json(physios);
@@ -66,7 +66,7 @@ app.get('api/physio/', async (req, res) => {
   }
 });
 
-app.get('api/physio/:id', async (req, res) => {
+app.get('/api/physio/:id', async (req, res) => {
   try {
     const physio = await Physio.findById(req.params.id);
     if (!physio) return res.status(404).json({ message: 'Not found' });
