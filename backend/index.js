@@ -10,7 +10,7 @@ const connectDB = require('./config/db');
 const postsRoutes = require('./routes/posts');
 const discussion=require('./routes/postdiscussion');
 const Physio = require('./models/Physio');
-const PhyDetail = require('./models/PhyDetail');
+const PhyDetail = require('./models/Phydetail');
 
 connectDB();    
 
